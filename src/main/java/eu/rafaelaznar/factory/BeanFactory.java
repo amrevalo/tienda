@@ -37,6 +37,7 @@ import eu.rafaelaznar.bean.specificimplementation.TipousuarioSpecificBeanImpleme
 import eu.rafaelaznar.bean.specificimplementation.UsuarioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.publicinterface.GenericBeanInterface;
 import eu.rafaelaznar.bean.specificimplementation.ApellidoSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.AutorSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.CategoriaprofesionalSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.CentroSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.CentrosanitarioSpecificBeanImplementation;
@@ -48,6 +49,7 @@ import eu.rafaelaznar.bean.specificimplementation.EspecialidadSpecificBeanImplem
 import eu.rafaelaznar.bean.specificimplementation.DestinoaltaSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.EpisodioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.FacturaSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.GeneroSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.GrupoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.MedicoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.ModalidadepisodioSpecificBeanImplementation;
@@ -56,11 +58,13 @@ import eu.rafaelaznar.bean.specificimplementation.NombrefemeninoSpecificBeanImpl
 import eu.rafaelaznar.bean.specificimplementation.NombremasculinoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.PacienteSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.PacienteVisitanteSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.ProductoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.ProvinciaSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.ServicioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.TipopagoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.SexoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.TipodependenciaSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.TipoproductoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.TiposervicioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.ViaSpecificBeanImplementation;
 
@@ -76,89 +80,39 @@ public class BeanFactory {
             case "tipousuario":
                 oBean = new TipousuarioSpecificBeanImplementation();
                 break;
-            case "grupo":
-                oBean = new GrupoSpecificBeanImplementation();
+            case "producto":
+                oBean = new ProductoSpecificBeanImplementation();
                 break;
-            case "curso":
-                oBean = new CursoSpecificBeanImplementation();
+            case "tipoproducto":
+                oBean = new TipoproductoSpecificBeanImplementation();
                 break;
-            case "centrosanitario":
-                oBean = new CentrosanitarioSpecificBeanImplementation();
+//            case "lineapedido":
+//                oBean = new LineapedidoSpecificBeanImplementation();
+//                break;
+//            case "pedido":
+//                oBean = new PedidoSpecificBeanImplementation();
+//                break;
+//            case "factura":
+//                oBean = new FacturaSpecificBeanImplementation();
+//                break;
+//            case "cliente":
+//                oBean = new ClienteSpecificBeanImplementation();
+//                break;
+            case "autor":
+                oBean = new AutorSpecificBeanImplementation();
                 break;
-            case "centro":
-                oBean = new CentroSpecificBeanImplementation();
+            case "genero":
+                oBean = new GeneroSpecificBeanImplementation();
                 break;
-            case "circunstanciasalta":
-                oBean = new CircunstanciasaltaSpecificBeanImplementation();
-                break;
-            case "especialidad":
-                oBean = new EspecialidadSpecificBeanImplementation();
-                break;
-            case "destinoalta":
-                oBean = new DestinoaltaSpecificBeanImplementation();
-                break;
-            case "tipopago":
-                oBean = new TipopagoSpecificBeanImplementation();
-                break;
-            case "sexo":
-                oBean = new SexoSpecificBeanImplementation();
-                break;
-            case "tipoepisodio":
-                oBean = new TipoepisodioSpecificBeanImplementation();
-                break;
-            case "tiposervicio":
-                oBean = new TiposervicioSpecificBeanImplementation();
-                break;
-            case "modalidadepisodio":
-                oBean = new ModalidadepisodioSpecificBeanImplementation();
-                break;
-            case "tipodependencia":
-                oBean = new TipodependenciaSpecificBeanImplementation();
-                break;
-            case "factura":
-                oBean = new FacturaSpecificBeanImplementation();
-                break;
-            case "servicio":
-                oBean = new ServicioSpecificBeanImplementation();
-                break;
-            case "paciente":
-                UsuarioSpecificBeanImplementation oUser = (UsuarioSpecificBeanImplementation) oPuserSecurity.getBean();
-                if (oUser.getId_tipousuario() == 5) {
-                    oBean = new PacienteVisitanteSpecificBeanImplementation();
-                } else {
-                    oBean = new PacienteSpecificBeanImplementation();
-                }
-                break;
-            case "categoriaprofesional":
-                oBean = new CategoriaprofesionalSpecificBeanImplementation();
-                break;
-            case "episodio":
-                oBean = new EpisodioSpecificBeanImplementation();
-                break;
-            case "medico":
-                oBean = new MedicoSpecificBeanImplementation();
-                break;
-            case "dependencia":
-                oBean = new DependenciaSpecificBeanImplementation();
-                break;
-            case "nombremasculino":
-                oBean = new NombremasculinoSpecificBeanImplementation();
-                break;
-            case "nombrefemenino":
-                oBean = new NombrefemeninoSpecificBeanImplementation();
-                break;
-            case "apellido":
-                oBean = new ApellidoSpecificBeanImplementation();
-                break;
-            case "municipio":
-                oBean = new MunicipioSpecificBeanImplementation();
-                break;
-            case "provincia":
-                oBean = new ProvinciaSpecificBeanImplementation();
-                break;
-            case "via":
-                oBean = new ViaSpecificBeanImplementation();
-                break;
+//            case "imagen":
+//                oBean = new ImagenSpecificBeanImplementation();
+//                break;
+//            case "prodxproveedor":
+//                oBean = new ProdxproveedorSpecificBeanImplementation();
+//                break;
+//            case "proveedor":
+//                oBean = new ProveedorSpecificBeanImplementation();
+//                break;          
             default:
 
                 //  oReplyBean = new ReplyBean(500, "Object not found : Please contact your administrator");
