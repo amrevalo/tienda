@@ -61,15 +61,15 @@ public class AutorSpecificBeanImplementation extends TableGenericBeanImplementat
     )
     private String descripcion = "";
 
-    @Expose(deserialize = false)
-    @MetaPropertyBeanInterface(
-            ShortName = "Mangas del autor",
-            LongName = "Mangas del autor",
-            Description = "Mangas del autor",
-            Type = EnumHelper.FieldType.Link,
-            References = "producto"
-    )
-    private Integer link_producto = null;
+//    @Expose(deserialize = false)
+//    @MetaPropertyBeanInterface(
+//            ShortName = "Mangas del autor",
+//            LongName = "Mangas del autor",
+//            Description = "Mangas del autor",
+//            Type = EnumHelper.FieldType.Link,
+//            References = "producto"
+//    )
+//    private Integer link_producto = null;
 
     public AutorSpecificBeanImplementation() {
     }

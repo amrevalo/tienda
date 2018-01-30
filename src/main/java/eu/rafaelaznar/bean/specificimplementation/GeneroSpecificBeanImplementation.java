@@ -61,15 +61,15 @@ public class GeneroSpecificBeanImplementation extends TableGenericBeanImplementa
     )
     private String descripcion = "";
 
-    @Expose(deserialize = false)
-    @MetaPropertyBeanInterface(
-            ShortName = "Mangas del genero",
-            LongName = "Mangas del genero",
-            Description = "Mangas del genero",
-            Type = EnumHelper.FieldType.Link,
-            References = "producto"
-    )
-    private Integer link_producto = null;
+//    @Expose(deserialize = false)
+//    @MetaPropertyBeanInterface(
+//            ShortName = "Mangas del genero",
+//            LongName = "Mangas del genero",
+//            Description = "Mangas del genero",
+//            Type = EnumHelper.FieldType.Link,
+//            References = "producto"
+//    )
+//    private Integer link_producto = null;
 
     public GeneroSpecificBeanImplementation() {
     }

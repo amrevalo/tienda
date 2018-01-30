@@ -61,15 +61,15 @@ public class TipoproductoSpecificBeanImplementation extends TableGenericBeanImpl
     )
     private String descripcion = "";
 
-    @Expose(deserialize = false)
-    @MetaPropertyBeanInterface(
-            ShortName = "Productos del tipo",
-            LongName = "Productos del tipo",
-            Description = "Productos del tipo",
-            Type = EnumHelper.FieldType.Link,
-            References = "producto"
-    )
-    private Integer link_producto = null;
+//    @Expose(deserialize = false)
+//    @MetaPropertyBeanInterface(
+//            ShortName = "Productos del tipo",
+//            LongName = "Productos del tipo",
+//            Description = "Productos del tipo",
+//            Type = EnumHelper.FieldType.Link,
+//            References = "producto"
+//    )
+//    private Integer link_producto = null;
 
     public TipoproductoSpecificBeanImplementation() {
     }

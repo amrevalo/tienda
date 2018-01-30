@@ -36,6 +36,7 @@ import eu.rafaelaznar.bean.helper.MetaBeanHelper;
 import eu.rafaelaznar.bean.specificimplementation.TipousuarioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.UsuarioSpecificBeanImplementation;
 import eu.rafaelaznar.dao.publicinterface.MetaDaoInterface;
+import eu.rafaelaznar.dao.specificimplementation.AutorSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.CategoriaprofesionalSpecificDaoImplementation;
 //import eu.rafaelaznar.dao.specificimplementation.CentroProfesorSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.CentroSpecificDaoImplementation;
@@ -52,6 +53,7 @@ import eu.rafaelaznar.dao.specificimplementation.DestinoaltaSpecificDaoImplement
 //import eu.rafaelaznar.dao.specificimplementation.EpisodioProfesorSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.EpisodioSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.FacturaSpecificDaoImplementation;
+import eu.rafaelaznar.dao.specificimplementation.GeneroSpecificDaoImplementation;
 //import eu.rafaelaznar.dao.specificimplementation.GrupoProfesorSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.GrupoSpecificDaoImplementation;
 //import eu.rafaelaznar.dao.specificimplementation.MedicoProfesorSpecificDaoImplementation;
@@ -65,6 +67,7 @@ import eu.rafaelaznar.dao.specificimplementation.ServicioSpecificDaoImplementati
 import eu.rafaelaznar.dao.specificimplementation.TipopagoSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.SexoSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.TipodependenciaSpecificDaoImplementation;
+import eu.rafaelaznar.dao.specificimplementation.TipoproductoSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.TiposervicioSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.TipousuarioSpecificDaoImplementation;
 //import eu.rafaelaznar.dao.specificimplementation.UsuarioProfesorSpecificDaoImplementation;
@@ -109,6 +112,18 @@ public class DaoFactory {
             case "producto":
                 oDao = (MetaDaoInterface) new ProductoSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
                 break;    
+             
+            case "tipoproducto":
+                oDao = (MetaDaoInterface) new TipoproductoSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+                break;
+                
+            case "genero":
+                oDao = (MetaDaoInterface) new GeneroSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+                break;
+                
+            case "autor":
+                oDao = (MetaDaoInterface) new AutorSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+                break;
                 
                 
             default:
