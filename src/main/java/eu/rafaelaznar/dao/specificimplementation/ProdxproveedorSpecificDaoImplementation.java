@@ -30,50 +30,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package eu.rafaelaznar.bean.specificimplementation;
+package eu.rafaelaznar.dao.specificimplementation;
 
-import com.google.gson.annotations.Expose;
-import eu.rafaelaznar.bean.genericimplementation.TableGenericBeanImplementation;
-import eu.rafaelaznar.bean.meta.publicinterface.MetaObjectBeanInterface;
-import eu.rafaelaznar.bean.meta.publicinterface.MetaPropertyBeanInterface;
-import eu.rafaelaznar.helper.EnumHelper;
-import eu.rafaelaznar.helper.constant.RegexConstants;
+import eu.rafaelaznar.bean.helper.MetaBeanHelper;
+import eu.rafaelaznar.dao.genericimplementation.TableGenericDaoImplementation;
+import java.sql.Connection;
 
-@MetaObjectBeanInterface(
-        TableName = "curso",
-        SingularDescription = "Curso",
-        PluralDescription = "Cursos",
-        Icon = "fa fa-calendar-check-o",
-        Type = EnumHelper.SourceType.Table
-)
-public class CursoSpecificBeanImplementation extends TableGenericBeanImplementation {
+public class ProdxproveedorSpecificDaoImplementation extends TableGenericDaoImplementation {
 
-    @Expose
-    @MetaPropertyBeanInterface(
-            ShortName = "Curso",
-            LongName = "Curso",
-            Description = "Descripción del curso",
-            Type = EnumHelper.FieldType.String,
-            IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
-    )
-    private String descripcion;
-
-    public CursoSpecificBeanImplementation() {
-    }
-
-    public CursoSpecificBeanImplementation(Integer id) {
-        this.id = id;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public ProdxproveedorSpecificDaoImplementation(Connection oPooledConnection, MetaBeanHelper oPuserBean_security, String strWhere) throws Exception {
+        super("prodxproveedor", oPooledConnection, oPuserBean_security, strWhere);
     }
 
 }

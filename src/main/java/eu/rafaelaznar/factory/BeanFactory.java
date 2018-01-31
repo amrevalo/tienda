@@ -36,37 +36,18 @@ import eu.rafaelaznar.bean.helper.MetaBeanHelper;
 import eu.rafaelaznar.bean.specificimplementation.TipousuarioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.UsuarioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.publicinterface.GenericBeanInterface;
-import eu.rafaelaznar.bean.specificimplementation.ApellidoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.AutorSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.CategoriaprofesionalSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.CentroSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.CentrosanitarioSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.TipoepisodioSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.CircunstanciasaltaSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.CursoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.DependenciaSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.EspecialidadSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.DestinoaltaSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.EpisodioSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.ClienteSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.FacturaSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.GeneroSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.GrupoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.MedicoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.ModalidadepisodioSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.MunicipioSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.NombrefemeninoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.NombremasculinoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.PacienteSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.PacienteVisitanteSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.ImagenSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.LineapedidoSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.PedidoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.ProductoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.ProvinciaSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.ServicioSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.TipopagoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.SexoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.TipodependenciaSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.ProdxproveedorSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.ProveedorSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.TipoproductoSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.TiposervicioSpecificBeanImplementation;
-import eu.rafaelaznar.bean.specificimplementation.ViaSpecificBeanImplementation;
+
 
 public class BeanFactory {
 
@@ -85,34 +66,35 @@ public class BeanFactory {
                 break;
             case "tipoproducto":
                 oBean = new TipoproductoSpecificBeanImplementation();
-                break;
-//            case "lineapedido":
-//                oBean = new LineapedidoSpecificBeanImplementation();
-//                break;
-//            case "pedido":
-//                oBean = new PedidoSpecificBeanImplementation();
-//                break;
-//            case "factura":
-//                oBean = new FacturaSpecificBeanImplementation();
-//                break;
-//            case "cliente":
-//                oBean = new ClienteSpecificBeanImplementation();
-//                break;
+                break;          
             case "autor":
                 oBean = new AutorSpecificBeanImplementation();
                 break;
             case "genero":
                 oBean = new GeneroSpecificBeanImplementation();
                 break;
-//            case "imagen":
-//                oBean = new ImagenSpecificBeanImplementation();
-//                break;
-//            case "prodxproveedor":
-//                oBean = new ProdxproveedorSpecificBeanImplementation();
-//                break;
-//            case "proveedor":
-//                oBean = new ProveedorSpecificBeanImplementation();
-//                break;          
+            case "imagen":
+                oBean = new ImagenSpecificBeanImplementation();
+                break;
+            case "proveedor":
+                oBean = new ProveedorSpecificBeanImplementation();
+                break;  
+            case "prodxproveedor":
+                oBean = new ProdxproveedorSpecificBeanImplementation();
+                break;
+            case "cliente":
+                oBean = new ClienteSpecificBeanImplementation();
+                break;
+            case "pedido":
+                oBean = new PedidoSpecificBeanImplementation();
+                break;
+            case "factura":
+                oBean = new FacturaSpecificBeanImplementation();
+                break;
+            case "lineapedido":
+                oBean = new LineapedidoSpecificBeanImplementation();
+                break;
+                        
             default:
 
                 //  oReplyBean = new ReplyBean(500, "Object not found : Please contact your administrator");

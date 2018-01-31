@@ -37,40 +37,17 @@ import eu.rafaelaznar.bean.specificimplementation.TipousuarioSpecificBeanImpleme
 import eu.rafaelaznar.bean.specificimplementation.UsuarioSpecificBeanImplementation;
 import eu.rafaelaznar.dao.publicinterface.MetaDaoInterface;
 import eu.rafaelaznar.dao.specificimplementation.AutorSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.CategoriaprofesionalSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.CentroProfesorSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.CentroSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.CentrosanitarioSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.TipoepisodioSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.CircunstanciasaltaSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.CursoProfesorSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.CursoSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.DependenciaAlumnoSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.DependenciaProfesorSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.DependenciaSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.EspecialidadSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.DestinoaltaSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.EpisodioProfesorSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.EpisodioSpecificDaoImplementation;
+import eu.rafaelaznar.dao.specificimplementation.ClienteSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.FacturaSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.GeneroSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.GrupoProfesorSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.GrupoSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.MedicoProfesorSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.MedicoSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.ModalidadepisodioSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.PacienteAlumnoSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.PacienteProfesorSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.PacienteSpecificDaoImplementation;
+import eu.rafaelaznar.dao.specificimplementation.ImagenSpecificDaoImplementation;
+import eu.rafaelaznar.dao.specificimplementation.LineapedidoSpecificDaoImplementation;
+import eu.rafaelaznar.dao.specificimplementation.PedidoSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.ProductoSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.ServicioSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.TipopagoSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.SexoSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.TipodependenciaSpecificDaoImplementation;
+import eu.rafaelaznar.dao.specificimplementation.ProdxproveedorSpecificDaoImplementation;
+import eu.rafaelaznar.dao.specificimplementation.ProveedorSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.TipoproductoSpecificDaoImplementation;
-import eu.rafaelaznar.dao.specificimplementation.TiposervicioSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.TipousuarioSpecificDaoImplementation;
-//import eu.rafaelaznar.dao.specificimplementation.UsuarioProfesorSpecificDaoImplementation;
 import eu.rafaelaznar.dao.specificimplementation.UsuarioSpecificDaoImplementation;
 import java.sql.Connection;
 
@@ -124,7 +101,34 @@ public class DaoFactory {
             case "autor":
                 oDao = (MetaDaoInterface) new AutorSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
                 break;
+            
+            case "imagen":
+                oDao = (MetaDaoInterface) new ImagenSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+                break;
                 
+            case "proveedor":
+                oDao = (MetaDaoInterface) new ProveedorSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+                break;
+                
+            case "prodxproveedor":
+                oDao = (MetaDaoInterface) new ProdxproveedorSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+                break;
+                
+            case "cliente":
+                oDao = (MetaDaoInterface) new ClienteSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+                break;
+                
+            case "pedido":
+               oDao = (MetaDaoInterface) new PedidoSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+               break;
+               
+            case "lineapedido":
+               oDao = (MetaDaoInterface) new LineapedidoSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+               break;
+               
+            case "factura":
+               oDao = (MetaDaoInterface) new FacturaSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
+               break;   
                 
             default:
                 //oReplyBean = new ReplyBean(500, "Object not found : Please contact your administrator");

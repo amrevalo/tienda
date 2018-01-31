@@ -153,7 +153,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             IsForeignKeyDescriptor = false,
             MaxLength = 6
     )
-    private String existencias;
+    private Double existencias;
     
     
     @Expose
@@ -168,7 +168,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             IsForeignKeyDescriptor = false,
             MaxLength = 8
     )
-    private String precio;
+    private Double precio;
     
     
     @Expose
@@ -243,19 +243,20 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
         this.codigo = codigo;
     }
 
-    public String getExistencias() {
+    public Double getExistencias() {
         return existencias;
     }
 
-    public void setExistencias(String existencias) {
+    public void setExistencias(Double existencias) {
         this.existencias = existencias;
     }
 
-    public String getPrecio() {
+
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 

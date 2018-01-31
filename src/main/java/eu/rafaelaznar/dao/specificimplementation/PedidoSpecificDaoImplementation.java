@@ -36,10 +36,10 @@ import eu.rafaelaznar.bean.helper.MetaBeanHelper;
 import eu.rafaelaznar.dao.genericimplementation.TableGenericDaoImplementation;
 import java.sql.Connection;
 
-public class CentroSpecificDaoImplementation extends TableGenericDaoImplementation {
+public class PedidoSpecificDaoImplementation extends TableGenericDaoImplementation {
 
-    public CentroSpecificDaoImplementation(Connection oPooledConnection, MetaBeanHelper oPuserBean_security, String strWhere) throws Exception {
-        super("centro", oPooledConnection, oPuserBean_security, strWhere);
+    public PedidoSpecificDaoImplementation(Connection oPooledConnection, MetaBeanHelper oPuserBean_security, String strWhere) throws Exception {
+        super("pedido", oPooledConnection, oPuserBean_security, strWhere);
     }
 
 }

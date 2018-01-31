@@ -36,10 +36,10 @@ import eu.rafaelaznar.bean.helper.MetaBeanHelper;
 import eu.rafaelaznar.dao.genericimplementation.TableGenericDaoImplementation;
 import java.sql.Connection;
 
-public class SexoSpecificDaoImplementation extends TableGenericDaoImplementation {
+public class ImagenSpecificDaoImplementation extends TableGenericDaoImplementation {
 
-    public SexoSpecificDaoImplementation(Connection oPooledConnection, MetaBeanHelper oPuserBean_security, String strWhere) throws Exception {
-        super("sexo", oPooledConnection, oPuserBean_security, strWhere);
+    public ImagenSpecificDaoImplementation(Connection oPooledConnection, MetaBeanHelper oPuserBean_security, String strWhere) throws Exception {
+        super("imagen", oPooledConnection, oPuserBean_security, strWhere);
     }
 
 }

@@ -41,19 +41,19 @@ import eu.rafaelaznar.helper.EnumHelper;
 import eu.rafaelaznar.helper.constant.RegexConstants;
 
 @MetaObjectBeanInterface(
-        TableName = "servicio",
-        SingularDescription = "Servicio",
-        PluralDescription = "Servicios",
-        Icon = "fa fa-strikethrough",
+        TableName = "lineapedido",
+        SingularDescription = "Linea de pedido",
+        PluralDescription = "Lineas de pedido",
+        Icon = "fa fa-user-o",
         Type = EnumHelper.SourceType.Table
 )
-public class ServicioSpecificBeanImplementation extends TableGenericBeanImplementation {
+public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImplementation {
 
     @Expose
     @MetaPropertyBeanInterface(
-            ShortName = "Serv.",
-            LongName = "Servicio",
-            Description = "Servicios del hospital",
+            ShortName = "Linea Pedido",
+            LongName = "Linea de Pedido",
+            Description = "Linea de Pedido",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
@@ -62,92 +62,131 @@ public class ServicioSpecificBeanImplementation extends TableGenericBeanImplemen
     )
     private String descripcion = "";
 
-    @Expose
-    @MetaPropertyBeanInterface(
-            ShortName = "Cod.",
-            LongName = "Código",
-            Description = "Código del servicio",
-            Type = EnumHelper.FieldType.String,
-            IsRequired = true,
-            RegexPattern = "[^a-z0-9-]",
-            RegexHelp = "letras mayúsculas y números",
-            IsForeignKeyDescriptor = true,
-            MaxLength = 50
-    )
-    private String codigo;
-
+    
     @Expose(serialize = false)
     @MetaPropertyBeanInterface(
             Type = EnumHelper.FieldType.ForeignId
     )
-    private Integer id_tiposervicio = 0;
+    private Integer id_producto = 0;
     @Expose(deserialize = false)
     @MetaPropertyBeanInterface(
-            ShortName = "Tipo",
-            LongName = "Tipo servicio",
-            Description = "Tipo de servicio",
+            ShortName = "Producto",
+            LongName = "Producto de linea pedido",
+            Description = "Producto de la linea de pedido",
             Type = EnumHelper.FieldType.ForeignObject,
             IsRequired = true,
-            References = "tiposervicio",
+            References = "producto",
             Width = 4
     )
-    private MetaBeanHelper obj_tiposervicio = null;
-
-    //    @Expose(deserialize = false)
-//    @MetaPropertyBeanInterface(
-//            ShortName = "Es servicio de los episodios",
-//            LongName = "Es servicio de los episodios",
-//            Description = "Es servicio de los episodios",
-//            Type = EnumHelper.FieldType.Link,
-//            References = "episodio"
-//    )
-//    private Integer link_episodio = null;
+    private MetaBeanHelper obj_producto = null;
+    
+    
+    @Expose(serialize = false)
+    @MetaPropertyBeanInterface(
+            Type = EnumHelper.FieldType.ForeignId
+    )
+    private Integer id_pedido = 0;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Pedido",
+            LongName = "Pedido",
+            Description = "Pedido donde esta la linea de pedido",
+            Type = EnumHelper.FieldType.ForeignObject,
+            IsRequired = true,
+            References = "pedido",
+            Width = 4
+    )
+    private MetaBeanHelper obj_pedido = null;
+    
+    
+    
+    @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "Precio",
+            LongName = "Precio",
+            Description = "Precio del producto de la linea de pedido",
+            Type = EnumHelper.FieldType.Decimal,
+            IsRequired = true,
+            RegexPattern = "^[0-9]+([,][0-9]{2})?$",
+            RegexHelp = "Introduce un numero ",
+            IsForeignKeyDescriptor = false,
+            MaxLength = 8
+    )
+    private Double precio;
+    
+    
+    
+    
 //    @Expose(deserialize = false)
 //    @MetaPropertyBeanInterface(
-//            ShortName = "Es servicio de los medicos",
-//            LongName = "Es servicio de los medicos",
-//            Description = "Es servicio de los medicos",
+//            ShortName = "Mangas del autor",
+//            LongName = "Mangas del autor",
+//            Description = "Mangas del autor",
 //            Type = EnumHelper.FieldType.Link,
-//            References = "medico"
+//            References = "producto"
 //    )
-//    private Integer link_medico = null;
-    public ServicioSpecificBeanImplementation() {
+//    private Integer link_producto = null;
+
+    public LineapedidoSpecificBeanImplementation() {
     }
 
-    public ServicioSpecificBeanImplementation(Integer id) {
+    public LineapedidoSpecificBeanImplementation(Integer id) {
         this.id = id;
     }
 
-    public Integer getId_tiposervicio() {
-        return id_tiposervicio;
-    }
-
-    public void setId_tiposervicio(Integer id_tiposervicio) {
-        this.id_tiposervicio = id_tiposervicio;
-    }
-
-    public MetaBeanHelper getObj_tiposervicio() {
-        return obj_tiposervicio;
-    }
-
-    public void setObj_tiposervicio(MetaBeanHelper obj_tiposervicio) {
-        this.obj_tiposervicio = obj_tiposervicio;
-    }
-
-    public String getDescripcion() {
+    public String getDescription() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void setDescription(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public Integer getId_producto() {
+        return id_producto;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setId_producto(Integer id_producto) {
+        this.id_producto = id_producto;
     }
 
+    public MetaBeanHelper getObj_producto() {
+        return obj_producto;
+    }
+
+    public void setObj_producto(MetaBeanHelper obj_producto) {
+        this.obj_producto = obj_producto;
+    }
+
+    public Integer getId_pedido() {
+        return id_pedido;
+    }
+
+    public void setId_pedido(Integer id_pedido) {
+        this.id_pedido = id_pedido;
+    }
+
+    public MetaBeanHelper getObj_pedido() {
+        return obj_pedido;
+    }
+
+    public void setObj_pedido(MetaBeanHelper obj_pedido) {
+        this.obj_pedido = obj_pedido;
+    }
+
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
+    }
+
+    
+
+    
+
+    
+
+    
 }

@@ -34,56 +34,113 @@ package eu.rafaelaznar.bean.specificimplementation;
 
 import com.google.gson.annotations.Expose;
 import eu.rafaelaznar.bean.genericimplementation.TableGenericBeanImplementation;
+import eu.rafaelaznar.bean.helper.MetaBeanHelper;
 import eu.rafaelaznar.bean.meta.publicinterface.MetaObjectBeanInterface;
 import eu.rafaelaznar.bean.meta.publicinterface.MetaPropertyBeanInterface;
 import eu.rafaelaznar.helper.EnumHelper;
 import eu.rafaelaznar.helper.constant.RegexConstants;
 
 @MetaObjectBeanInterface(
-        TableName = "Tipodependencia",
-        SingularDescription = "Tipo de dependencia",
-        PluralDescription = "Tipo de dependencias",
-        Icon = "fa fa-yelp",
+        TableName = "prodxproveedor",
+        SingularDescription = "Producto por proveedor",
+        PluralDescription = "Productos por proveedor",
+        Icon = "fa fa-user-o",
         Type = EnumHelper.SourceType.Table
 )
-
-public class TipodependenciaSpecificBeanImplementation extends TableGenericBeanImplementation {
+public class ProdxproveedorSpecificBeanImplementation extends TableGenericBeanImplementation {
 
     @Expose
     @MetaPropertyBeanInterface(
-            ShortName = "Tipodep.desc.",
-            LongName = "Descripcion de tipo dependencia",
-            Description = "Descripcion de la tabla tipo dependencia",
+            ShortName = "Producto por proveedor",
+            LongName = "Producto por proveedor",
+            Description = "Producto por proveedor",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
-            // RegexHelp = RegexConstants.capitalizedSentence_Help,
+            RegexHelp = RegexConstants.capitalizedSentence_Help,
             IsForeignKeyDescriptor = true
     )
     private String descripcion = "";
 
+    
+    @Expose(serialize = false)
+    @MetaPropertyBeanInterface(
+            Type = EnumHelper.FieldType.ForeignId
+    )
+    private Integer id_proveedor = 0;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Proveedor",
+            LongName = "Proveedor",
+            Description = "Proveedor",
+            Type = EnumHelper.FieldType.ForeignObject,
+            IsRequired = true,
+            References = "proveedor",
+            Width = 4
+    )
+    private MetaBeanHelper obj_proveedor = null;
+    
+    
+    @Expose(serialize = false)
+    @MetaPropertyBeanInterface(
+            Type = EnumHelper.FieldType.ForeignId
+    )
+    private Integer id_producto = 0;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Producto",
+            LongName = "Producto",
+            Description = "Producto",
+            Type = EnumHelper.FieldType.ForeignObject,
+            IsRequired = true,
+            References = "producto",
+            Width = 4
+    )
+    private MetaBeanHelper obj_producto = null;
+    
 //    @Expose(deserialize = false)
 //    @MetaPropertyBeanInterface(
-//            ShortName = "Tipo dep.",
-//            LongName = "Tipo de Dependencia",
-//            Description = "Tipo de DEPENDENCIA",
+//            ShortName = "Mangas del autor",
+//            LongName = "Mangas del autor",
+//            Description = "Mangas del autor",
 //            Type = EnumHelper.FieldType.Link,
-//            References = "dependencia"
+//            References = "producto"
 //    )
-//    private Integer link_dependencia = null;
-    public TipodependenciaSpecificBeanImplementation() {
+//    private Integer link_producto = null;
+
+    public ProdxproveedorSpecificBeanImplementation() {
     }
 
-    TipodependenciaSpecificBeanImplementation(Integer id) {
+    public ProdxproveedorSpecificBeanImplementation(Integer id) {
         this.id = id;
     }
 
-    public String getDescripcion() {
+    public String getDescription() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void setDescription(String descripcion) {
         this.descripcion = descripcion;
     }
 
+    public Integer getId_producto() {
+        return id_producto;
+    }
+
+    public void setId_producto(Integer id_producto) {
+        this.id_producto = id_producto;
+    }
+
+    public MetaBeanHelper getObj_producto() {
+        return obj_producto;
+    }
+
+    public void setObj_producto(MetaBeanHelper obj_producto) {
+        this.obj_producto = obj_producto;
+    }
+
+    
+    
+    
+    
 }

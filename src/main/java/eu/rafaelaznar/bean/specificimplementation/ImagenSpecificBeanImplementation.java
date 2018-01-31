@@ -41,45 +41,88 @@ import eu.rafaelaznar.helper.EnumHelper;
 import eu.rafaelaznar.helper.constant.RegexConstants;
 
 @MetaObjectBeanInterface(
-        TableName = "sexo",
-        SingularDescription = "Sexo",
-        PluralDescription = "Sexo",
-        Icon = "fa fa-venus-mars",
+        TableName = "imagen",
+        SingularDescription = "Imagen",
+        PluralDescription = "Imagenes",
+        Icon = "fa fa-user-o",
         Type = EnumHelper.SourceType.Table
 )
-public class SexoSpecificBeanImplementation extends TableGenericBeanImplementation {
+public class ImagenSpecificBeanImplementation extends TableGenericBeanImplementation {
 
     @Expose
     @MetaPropertyBeanInterface(
-            ShortName = "Sexo",
-            LongName = "Sexo",
-            Description = "Sexo del usuario",
+            ShortName = "Imagen",
+            LongName = "Imagen del manga",
+            Description = "Imagen del tomo de manga",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedName,
-            RegexHelp = RegexConstants.capitalizedName_Help,
-            IsForeignKeyDescriptor = true,
-            Width = 1,
-            MaxLength = 100
+            RegexPattern = RegexConstants.capitalizedSentence,
+            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsForeignKeyDescriptor = true
     )
-    private String descripcion;
+    private String descripcion = "";
 
+    
+    @Expose(serialize = false)
+    @MetaPropertyBeanInterface(
+            Type = EnumHelper.FieldType.ForeignId
+    )
+    private Integer id_producto = 0;
     @Expose(deserialize = false)
     @MetaPropertyBeanInterface(
-            ShortName = "Pacientes",
-            LongName = "Pacientes por sexo",
-            Description = "Pacientes por sexo",
-            Type = EnumHelper.FieldType.Link,
-            References = "paciente"
+            ShortName = "Producto",
+            LongName = "Producto",
+            Description = "Producto",
+            Type = EnumHelper.FieldType.ForeignObject,
+            IsRequired = true,
+            References = "producto",
+            Width = 4
     )
-    private Integer link_paciente = null;
+    private MetaBeanHelper obj_producto = null;
     
-    public String getDescripcion() {
+//    @Expose(deserialize = false)
+//    @MetaPropertyBeanInterface(
+//            ShortName = "Mangas del autor",
+//            LongName = "Mangas del autor",
+//            Description = "Mangas del autor",
+//            Type = EnumHelper.FieldType.Link,
+//            References = "producto"
+//    )
+//    private Integer link_producto = null;
+
+    public ImagenSpecificBeanImplementation() {
+    }
+
+    public ImagenSpecificBeanImplementation(Integer id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void setDescription(String descripcion) {
         this.descripcion = descripcion;
     }
 
+    public Integer getId_producto() {
+        return id_producto;
+    }
+
+    public void setId_producto(Integer id_producto) {
+        this.id_producto = id_producto;
+    }
+
+    public MetaBeanHelper getObj_producto() {
+        return obj_producto;
+    }
+
+    public void setObj_producto(MetaBeanHelper obj_producto) {
+        this.obj_producto = obj_producto;
+    }
+
+    
+    
+    
+    
 }

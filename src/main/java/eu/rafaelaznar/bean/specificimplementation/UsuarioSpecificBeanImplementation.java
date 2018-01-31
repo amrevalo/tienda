@@ -37,7 +37,6 @@ import eu.rafaelaznar.bean.genericimplementation.TableGenericBeanImplementation;
 import eu.rafaelaznar.bean.helper.MetaBeanHelper;
 import eu.rafaelaznar.bean.meta.publicinterface.MetaObjectBeanInterface;
 import eu.rafaelaznar.bean.meta.publicinterface.MetaPropertyBeanInterface;
-import eu.rafaelaznar.dao.specificimplementation.GrupoSpecificDaoImplementation;
 import eu.rafaelaznar.helper.EnumHelper;
 import eu.rafaelaznar.helper.Log4jHelper;
 import eu.rafaelaznar.helper.constant.RegexConstants;
@@ -323,11 +322,11 @@ public class UsuarioSpecificBeanImplementation extends TableGenericBeanImplement
     @Override
     public UsuarioSpecificBeanImplementation fill(ResultSet oResultSet, Connection oConnection, MetaBeanHelper oPuserBean_security, Integer expand) throws Exception {
         super.fill(oResultSet, oConnection, oPuserBean_security, expand);
-        GrupoSpecificDaoImplementation oGrupoDao = null;
-        GrupoSpecificBeanImplementation oGrupoBean = null;
+        //GrupoSpecificDaoImplementation oGrupoDao = null;
+        //GrupoSpecificBeanImplementation oGrupoBean = null;
         MetaBeanHelper oMetaBeanHelper = null;
         if (this.id_tipousuario == 3) { // si profesor rellenar sus grupos
-            GrupoSpecificBeanImplementation oGrupo = null;
+            //GrupoSpecificBeanImplementation oGrupo = null;
             PreparedStatement oPreparedStatement = null;
             ResultSet oResultSet2 = null;
             String strSQL = "select * from grupo where id_usuario= ?";
@@ -336,10 +335,7 @@ public class UsuarioSpecificBeanImplementation extends TableGenericBeanImplement
                 oPreparedStatement.setInt(1, this.getId());
                 oResultSet2 = oPreparedStatement.executeQuery();
                 if (oResultSet2.next()) {
-                    oGrupoDao = new GrupoSpecificDaoImplementation(oConnection, oPuserBean_security, "and id_usuario=" + this.getId().toString());
-                    oGrupoBean = (GrupoSpecificBeanImplementation) new GrupoSpecificBeanImplementation();                   
-//                    oGrupo = (GrupoSpecificBeanImplementation) new GrupoSpecificBeanImplementation(this.getId_grupo()).fill(oResultSet2, oConnection, oPuserBean_security, expand - 1);
-//                    this.getObj_grupos().add(oGrupo);
+
                 }
             } catch (Exception ex) {
                 String msg = this.getClass().getName() + ":" + (ex.getStackTrace()[0]).getMethodName();

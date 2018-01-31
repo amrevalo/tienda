@@ -34,47 +34,90 @@ package eu.rafaelaznar.bean.specificimplementation;
 
 import com.google.gson.annotations.Expose;
 import eu.rafaelaznar.bean.genericimplementation.TableGenericBeanImplementation;
+import eu.rafaelaznar.bean.helper.MetaBeanHelper;
 import eu.rafaelaznar.bean.meta.publicinterface.MetaObjectBeanInterface;
 import eu.rafaelaznar.bean.meta.publicinterface.MetaPropertyBeanInterface;
 import eu.rafaelaznar.helper.EnumHelper;
 import eu.rafaelaznar.helper.constant.RegexConstants;
 
 @MetaObjectBeanInterface(
-        TableName = "tipoepisodio",
-        SingularDescription = "Tipo de episodio",
-        PluralDescription = "Tipos de episodios",
-        Icon = "fa fa-id-card",
+        TableName = "pedido",
+        SingularDescription = "Pedido",
+        PluralDescription = "Pedidos",
+        Icon = "fa fa-user-o",
         Type = EnumHelper.SourceType.Table
 )
-public class TipoepisodioSpecificBeanImplementation extends TableGenericBeanImplementation {
+public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementation {
 
+
+    @Expose(serialize = false)
+    @MetaPropertyBeanInterface(
+            Type = EnumHelper.FieldType.ForeignId
+    )
+    private Integer id_cliente = 0;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Cliente",
+            LongName = "Cliente del pedido",
+            Description = "Cliente del pedido",
+            Type = EnumHelper.FieldType.ForeignObject,
+            IsRequired = true,
+            References = "cliente",
+            Width = 4
+    )
+    private MetaBeanHelper obj_cliente = null;
+    
+    
+    @Expose(serialize = false)
+    @MetaPropertyBeanInterface(
+            Type = EnumHelper.FieldType.ForeignId
+    )
+    private Integer id_factura = 0;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Factura",
+            LongName = "Factura del pedido",
+            Description = "Factura del pedido",
+            Type = EnumHelper.FieldType.ForeignObject,
+            IsRequired = true,
+            References = "factura",
+            Width = 4
+    )
+    private MetaBeanHelper obj_factura = null;
+    
+    
     @Expose
     @MetaPropertyBeanInterface(
-            ShortName = "Tipo",
-            LongName = "Tipo de episodio",
-            Description = "Tipo de episodio dentro del sistema",
+            ShortName = "Pedido",
+            LongName = "Pedido del cliente",
+            Description = "Pedido del cliente",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
             IsForeignKeyDescriptor = true
     )
-
     private String descripcion = "";
-
+    
+    
+    
+    
+    
+    
 //    @Expose(deserialize = false)
 //    @MetaPropertyBeanInterface(
-//            ShortName = "Tipo de episodio según el episodio",
-//            LongName = "Tipo de episodio según el episodio",
-//            Description = "Tipo de episodio según el episodio",
+//            ShortName = "Mangas del autor",
+//            LongName = "Mangas del autor",
+//            Description = "Mangas del autor",
 //            Type = EnumHelper.FieldType.Link,
-//            References = "episodio"
+//            References = "producto"
 //    )
-//    private Integer link_episodio = null;
-    public TipoepisodioSpecificBeanImplementation() {
+//    private Integer link_producto = null;
+
+    public PedidoSpecificBeanImplementation() {
     }
 
-    public TipoepisodioSpecificBeanImplementation(Integer id) {
+    public PedidoSpecificBeanImplementation(Integer id) {
         this.id = id;
     }
 
@@ -86,4 +129,41 @@ public class TipoepisodioSpecificBeanImplementation extends TableGenericBeanImpl
         this.descripcion = descripcion;
     }
 
+    public Integer getId_cliente() {
+        return id_cliente;
+    }
+
+    public void setId_cliente(Integer id_cliente) {
+        this.id_cliente = id_cliente;
+    }
+
+    public MetaBeanHelper getObj_cliente() {
+        return obj_cliente;
+    }
+
+    public void setObj_cliente(MetaBeanHelper obj_cliente) {
+        this.obj_cliente = obj_cliente;
+    }
+
+    public Integer getId_factura() {
+        return id_factura;
+    }
+
+    public void setId_factura(Integer id_factura) {
+        this.id_factura = id_factura;
+    }
+
+    public MetaBeanHelper getObj_factura() {
+        return obj_factura;
+    }
+
+    public void setObj_factura(MetaBeanHelper obj_factura) {
+        this.obj_factura = obj_factura;
+    }
+
+    
+
+    
+
+    
 }
