@@ -26,17 +26,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
 )
 public class ProductoSpecificBeanImplementation extends TableGenericBeanImplementation {
 
-    @Expose(deserialize = false)
-    @MetaPropertyBeanInterface(
-            ShortName = "Nombre completo",
-            LongName = "Nombre completo",
-            Description = "Nombre completo del usuario",
-            Type = EnumHelper.FieldType.Calculated,
-            IsForeignKeyDescriptor = true,
-            Width = 3,
-            MaxLength = 100
-    )
-    private String nombrecompleto;
+    
     
     
     
@@ -130,12 +120,12 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
     @MetaPropertyBeanInterface(
             ShortName = "Cod.",
             LongName = "Código",
-            Description = "Código de la dependencia",
+            Description = "Código del producto",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
             RegexPattern = "[^a-z0-9-]",
             RegexHelp = "letras mayúsculas y números",
-            IsForeignKeyDescriptor = true,
+            IsForeignKeyDescriptor = false,
             MaxLength = 50
     )
     private String codigo;
@@ -143,17 +133,17 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
     
     @Expose
     @MetaPropertyBeanInterface(
-            ShortName = "Precio",
-            LongName = "Precio del producto",
-            Description = "Precio del producto",
+            ShortName = "Existencias",
+            LongName = "Existencias del producto",
+            Description = "Existencias del producto",
             Type = EnumHelper.FieldType.Integer,
             IsRequired = true,
             RegexPattern = "^[0-9]+$",
-            RegexHelp = "Introduce un numero ",
+            RegexHelp = "Introduce un numero entero ",
             IsForeignKeyDescriptor = false,
             MaxLength = 6
     )
-    private Double existencias;
+    private Integer existencias;
     
     
     @Expose
@@ -194,7 +184,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String publico = "";
     
@@ -208,7 +198,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String informacion_adicional = "";
 
@@ -243,11 +233,11 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
         this.codigo = codigo;
     }
 
-    public Double getExistencias() {
+    public Integer getExistencias() {
         return existencias;
     }
 
-    public void setExistencias(Double existencias) {
+    public void setExistencias(Integer existencias) {
         this.existencias = existencias;
     }
 

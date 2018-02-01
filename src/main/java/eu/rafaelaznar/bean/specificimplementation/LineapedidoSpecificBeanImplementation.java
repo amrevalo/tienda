@@ -44,7 +44,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
         TableName = "lineapedido",
         SingularDescription = "Linea de pedido",
         PluralDescription = "Lineas de pedido",
-        Icon = "fa fa-user-o",
+        Icon = "fas fa-camera-retro",
         Type = EnumHelper.SourceType.Table
 )
 public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImplementation {
@@ -90,7 +90,7 @@ public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImple
     @MetaPropertyBeanInterface(
             ShortName = "Pedido",
             LongName = "Pedido",
-            Description = "Pedido donde esta la linea de pedido",
+            Description = "Identificador de pedido",
             Type = EnumHelper.FieldType.ForeignObject,
             IsRequired = true,
             References = "pedido",
@@ -104,7 +104,7 @@ public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImple
     @MetaPropertyBeanInterface(
             ShortName = "Precio",
             LongName = "Precio",
-            Description = "Precio del producto de la linea de pedido",
+            Description = "Precio del producto o productos de la linea de pedido",
             Type = EnumHelper.FieldType.Decimal,
             IsRequired = true,
             RegexPattern = "^[0-9]+([,][0-9]{2})?$",
@@ -115,6 +115,19 @@ public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImple
     private Double precio;
     
     
+    @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "Cantidad",
+            LongName = "Cantidad del producto",
+            Description = "Cantidad del mismo producto",
+            Type = EnumHelper.FieldType.Integer,
+            IsRequired = true,
+            RegexPattern = "^[0-9]+$",
+            RegexHelp = "Introduce un numero entero ",
+            IsForeignKeyDescriptor = false,
+            MaxLength = 6
+    )
+    private Integer cantidad;
     
     
 //    @Expose(deserialize = false)
@@ -180,6 +193,22 @@ public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImple
 
     public void setPrecio(Double precio) {
         this.precio = precio;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
     }
 
     
