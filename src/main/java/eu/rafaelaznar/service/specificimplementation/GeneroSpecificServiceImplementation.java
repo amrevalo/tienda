@@ -59,9 +59,7 @@ public class GeneroSpecificServiceImplementation extends TableGenericServiceImpl
             if (idTipousuario == 1) {
                 return true;
             } else {
-                if (idTipousuario == 3
-                        || idTipousuario == 4
-                        || idTipousuario == 5) {
+                if (idTipousuario == 2) {
 
                     switch (strMethod) {
                         case "getmetadata":
@@ -73,13 +71,17 @@ public class GeneroSpecificServiceImplementation extends TableGenericServiceImpl
                         case "get":
                             return true;
                         case "set":
-                            return true;
+                            return false;
                         case "remove":
                             return false;
                         case "getpage":
                             return true;
                         case "getcount":
                             return true;
+                        case "getpagex":
+                            return true;
+                        case "getcountx":
+                            return true;    
                     }
                 } else {
                     return false;

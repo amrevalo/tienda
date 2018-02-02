@@ -32,6 +32,9 @@
  */
 package eu.rafaelaznar.service.specificimplementation;
 
+import eu.rafaelaznar.bean.helper.MetaBeanHelper;
+import eu.rafaelaznar.bean.specificimplementation.TipousuarioSpecificBeanImplementation;
+import eu.rafaelaznar.bean.specificimplementation.UsuarioSpecificBeanImplementation;
 import eu.rafaelaznar.service.genericimplementation.TableGenericServiceImplementation;
 import javax.servlet.http.HttpServletRequest;
 
@@ -41,4 +44,53 @@ public class TipousuarioSpecificServiceImplementation extends TableGenericServic
         super(request);
     }
 
+    @Override
+    protected Boolean checkPermission(String strMethodName) {
+        MetaBeanHelper oUsuarioBean = (MetaBeanHelper) oRequest.getSession().getAttribute("user");
+        if (oUsuarioBean != null) {
+            UsuarioSpecificBeanImplementation oUsuario = (UsuarioSpecificBeanImplementation) oUsuarioBean.getBean();
+            MetaBeanHelper oMetaBeanHelper = oUsuario.getObj_tipousuario();
+            TipousuarioSpecificBeanImplementation oTipousuario = (TipousuarioSpecificBeanImplementation) oMetaBeanHelper.getBean();
+            Integer idTipousuario = oTipousuario.getId();
+
+            String strMethod = strMethodName.toLowerCase();
+            if (idTipousuario == 1) {
+                return true;
+            } else {
+                if (idTipousuario == 2) {
+
+                    switch (strMethod) {
+                        case "getmetadata":
+                            return true;
+                        case "getobjectmetadata":
+                            return true;
+                        case "getpropertiesmetadata":
+                            return true;
+                        case "get":
+                            return true;
+                        case "set":
+                            return false;
+                        case "remove":
+                            return false;
+                        case "getpage":
+                            return true;
+                        case "getcount":
+                            return true;
+                        case "getpagex":
+                            return true;
+                        case "getcountx":
+                            return true;    
+                    }
+                } else {
+                    return false;
+                }
+            }
+        } else {
+            return false;
+        }
+        return false;
+    }
+    
+    
+    
 }

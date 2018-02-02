@@ -82,6 +82,20 @@ public class UsuarioSpecificServiceImplementation extends TableGenericServiceImp
         hmObjectsMetaData.put("genero", oDao.getObjectMetaData());
         oDao = DaoFactory.getDao("autor", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
         hmObjectsMetaData.put("autor", oDao.getObjectMetaData());
+        oDao = DaoFactory.getDao("proveedor", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+        hmObjectsMetaData.put("proveedor", oDao.getObjectMetaData());
+        oDao = DaoFactory.getDao("prodxproveedor", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+        hmObjectsMetaData.put("prodxproveedor", oDao.getObjectMetaData());
+        oDao = DaoFactory.getDao("imagen", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+        hmObjectsMetaData.put("imagen", oDao.getObjectMetaData());
+        
+        oDao = DaoFactory.getDao("lineapedido", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+        hmObjectsMetaData.put("lineapedido", oDao.getObjectMetaData());
+        oDao = DaoFactory.getDao("pedido", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+        hmObjectsMetaData.put("pedido", oDao.getObjectMetaData());
+        oDao = DaoFactory.getDao("cliente", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+        hmObjectsMetaData.put("cliente", oDao.getObjectMetaData());
+        
         
         String strJson = GsonHelper.getGson().toJson(hmObjectsMetaData);
         oReplyBean = new ReplyBeanHelper(200, strJson);
