@@ -105,7 +105,7 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String direccion = "";
 
@@ -119,7 +119,7 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String provincia = "";
     
@@ -134,7 +134,8 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             RegexPattern = RegexConstants.email,
             RegexHelp = RegexConstants.email_Help,
             MaxLength = 50,
-            IsVisible = false
+            IsVisible = false,
+            IsForeignKeyDescriptor = false
     )
     private String email;
     
@@ -148,7 +149,7 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String telefono = "";
     

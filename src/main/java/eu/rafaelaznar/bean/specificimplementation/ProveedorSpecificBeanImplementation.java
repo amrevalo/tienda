@@ -72,7 +72,7 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String direccion = "";
     
@@ -86,7 +86,7 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String telefono = "";
     
@@ -100,7 +100,7 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String email = "";
     
@@ -114,7 +114,7 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String codigo_postal = "";
     

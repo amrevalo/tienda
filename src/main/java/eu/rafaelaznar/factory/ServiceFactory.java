@@ -191,6 +191,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oProductoService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oProductoService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oProductoService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -324,6 +330,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oImagenService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oImagenService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oImagenService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;

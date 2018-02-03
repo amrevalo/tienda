@@ -43,7 +43,8 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             Type = EnumHelper.FieldType.ForeignObject,
             IsRequired = true,
             References = "usuario",
-            Width = 4
+            Width = 4,
+            IsVisible = false
     )
     private MetaBeanHelper obj_usuario = null;
     
@@ -153,7 +154,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             Description = "Precio del producto",
             Type = EnumHelper.FieldType.Decimal,
             IsRequired = true,
-            RegexPattern = "^[0-9]+([,][0-9]{2})?$",
+            RegexPattern = "^[0-9]+([.][0-9]{2})?$",
             RegexHelp = "Introduce un numero ",
             IsForeignKeyDescriptor = false,
             MaxLength = 8
@@ -184,7 +185,8 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = false
+            IsForeignKeyDescriptor = false,
+            IsVisible = false
     )
     private String publico = "";
     
@@ -198,13 +200,22 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = false
+            IsForeignKeyDescriptor = false,
+            IsVisible = false
     )
     private String informacion_adicional = "";
 
     
     
-    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Imagenes del producto",
+            LongName = "Imagenes del producto",
+            Description = "Imagenes del producto",
+            Type = EnumHelper.FieldType.Link,
+            References = "imagen"
+    )
+    private Integer link_imagen = null;
     
     
     

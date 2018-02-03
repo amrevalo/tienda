@@ -89,7 +89,7 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedName,
             RegexHelp = RegexConstants.capitalizedName_Help,
-            IsForeignKeyDescriptor = true,
+            IsForeignKeyDescriptor = false,
             Width = 3,
             MaxLength = 100
     )
@@ -105,7 +105,7 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedName,
             RegexHelp = RegexConstants.capitalizedName_Help,
-            IsForeignKeyDescriptor = true,
+            IsForeignKeyDescriptor = false,
             Width = 3,
             MaxLength = 100
     )
@@ -121,7 +121,7 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedName,
             RegexHelp = RegexConstants.capitalizedName_Help,
-            IsForeignKeyDescriptor = true,
+            IsForeignKeyDescriptor = false,
             Width = 3,
             MaxLength = 100
     )
