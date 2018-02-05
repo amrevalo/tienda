@@ -104,15 +104,15 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
     
     
     
-//    @Expose(deserialize = false)
-//    @MetaPropertyBeanInterface(
-//            ShortName = "Mangas del autor",
-//            LongName = "Mangas del autor",
-//            Description = "Mangas del autor",
-//            Type = EnumHelper.FieldType.Link,
-//            References = "producto"
-//    )
-//    private Integer link_producto = null;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Lineas pedido por pedido",
+            LongName = "Lineas de pedido por pedido",
+            Description = "Lineas de pedido por pedido",
+            Type = EnumHelper.FieldType.Link,
+            References = "lineapedido"
+    )
+    private Integer link_lineapedido = null;
 
     public PedidoSpecificBeanImplementation() {
     }

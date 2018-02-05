@@ -103,8 +103,8 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             Description = "Direccion del cliente",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            RegexPattern = RegexConstants.direction,
+            RegexHelp = RegexConstants.directionSentence_Help,
             IsForeignKeyDescriptor = false
     )
     private String direccion = "";
@@ -147,7 +147,7 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             Description = "Telefono del cliente",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
+            RegexPattern = RegexConstants.phoneNumber,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
             IsForeignKeyDescriptor = false
     )
@@ -156,15 +156,15 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
     
     
     
-//    @Expose(deserialize = false)
-//    @MetaPropertyBeanInterface(
-//            ShortName = "Mangas del autor",
-//            LongName = "Mangas del autor",
-//            Description = "Mangas del autor",
-//            Type = EnumHelper.FieldType.Link,
-//            References = "producto"
-//    )
-//    private Integer link_producto = null;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Pedidos del cliente",
+            LongName = "Pedidos del cliente",
+            Description = "Pedidos del cliente",
+            Type = EnumHelper.FieldType.Link,
+            References = "pedido"
+    )
+    private Integer link_pedido = null;
 
     public ClienteSpecificBeanImplementation() {
     }

@@ -46,4 +46,5 @@ public class RegexConstants {
     public static final String capitalizedSentence_Help = "una frase que comienza en mayúscula";
     public static final String direction = "[A-Z]{1}[a-z0-9ºçñáéíóúàèò- ]*";
     public static final String directionSentence_Help = "una direccion que comienza en mayúscula";
+    public static final String phoneNumber = "[0-9]{9}$/";
 }

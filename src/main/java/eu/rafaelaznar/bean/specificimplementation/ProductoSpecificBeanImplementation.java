@@ -218,6 +218,26 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
     private Integer link_imagen = null;
     
     
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Producto por proveedor",
+            LongName = "Producto por proveedor",
+            Description = "Producto por proveedor",
+            Type = EnumHelper.FieldType.Link,
+            References = "prodxproveedor"
+    )
+    private Integer link_prodxproveedor = null;
+    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Lineas pedido del producto",
+            LongName = "Lineas de pedido donde esta el producto",
+            Description = "Lineas de pedido donde esta el producto",
+            Type = EnumHelper.FieldType.Link,
+            References = "lineapedido"
+    )
+    private Integer link_lineapedido = null;
+    
     
     public ProductoSpecificBeanImplementation() {
     }

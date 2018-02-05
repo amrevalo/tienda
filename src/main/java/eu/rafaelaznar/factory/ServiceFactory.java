@@ -159,6 +159,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oTipousuarioService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oTipousuarioService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oTipousuarioService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -231,6 +237,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oTipoproductoService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oTipoproductoService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oTipoproductoService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -264,6 +276,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oGeneroService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oGeneroService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oGeneroService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -297,6 +315,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oAutorService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oAutorService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oAutorService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -370,6 +394,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oProveedorService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oProveedorService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oProveedorService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -404,6 +434,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oProdxproveedorService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oProdxproveedorService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oProdxproveedorService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -438,6 +474,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oClienteService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oClienteService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oClienteService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -471,6 +513,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oPedidoService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oPedidoService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oPedidoService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -505,6 +553,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oFacturaService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oFacturaService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oFacturaService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -539,6 +593,12 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oLineapedidoService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oLineapedidoService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oLineapedidoService.getPageX();
+                        break;    
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;

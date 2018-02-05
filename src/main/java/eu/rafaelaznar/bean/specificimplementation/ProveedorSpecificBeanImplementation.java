@@ -119,15 +119,15 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
     private String codigo_postal = "";
     
     
-//    @Expose(deserialize = false)
-//    @MetaPropertyBeanInterface(
-//            ShortName = "Mangas del autor",
-//            LongName = "Mangas del autor",
-//            Description = "Mangas del autor",
-//            Type = EnumHelper.FieldType.Link,
-//            References = "producto"
-//    )
-//    private Integer link_producto = null;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Producto del proveedor",
+            LongName = "Producto del proveedor ",
+            Description = "Producto del proveedor",
+            Type = EnumHelper.FieldType.Link,
+            References = "prodxproveedor"
+    )
+    private Integer link_prodxproveedor = null;
 
     public ProveedorSpecificBeanImplementation() {
     }
