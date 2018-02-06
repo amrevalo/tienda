@@ -102,7 +102,7 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             LongName = "Direccion del cliente",
             Description = "Direccion del cliente",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
+            IsRequired = false,
             RegexPattern = RegexConstants.direction,
             RegexHelp = RegexConstants.directionSentence_Help,
             IsForeignKeyDescriptor = false
@@ -116,7 +116,7 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             LongName = "Provincia del cliente",
             Description = "Provincia del cliente",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
+            IsRequired = false,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
             IsForeignKeyDescriptor = false
@@ -146,9 +146,9 @@ public class ClienteSpecificBeanImplementation extends TableGenericBeanImplement
             LongName = "Telefono del cliente",
             Description = "Telefono del cliente",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
+            IsRequired = false,
             RegexPattern = RegexConstants.phoneNumber,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            RegexHelp = RegexConstants.phoneNumber_Help,
             IsForeignKeyDescriptor = false
     )
     private String telefono = "";

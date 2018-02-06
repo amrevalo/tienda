@@ -69,9 +69,9 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
             LongName = "Direccion del proveedor",
             Description = "Direccion del proveedor",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsRequired = false,
+            RegexPattern = RegexConstants.direction,
+            RegexHelp = RegexConstants.directionSentence_Help,
             IsForeignKeyDescriptor = false
     )
     private String direccion = "";
@@ -83,9 +83,9 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
             LongName = "Telefono del proveedor",
             Description = "Telefono del proveedor",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsRequired = false,
+            RegexPattern = RegexConstants.phoneNumber,
+            RegexHelp = RegexConstants.phoneNumber_Help,
             IsForeignKeyDescriptor = false
     )
     private String telefono = "";
@@ -98,8 +98,8 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
             Description = "Email del proveedor",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            RegexPattern = RegexConstants.email,
+            RegexHelp = RegexConstants.email_Help,
             IsForeignKeyDescriptor = false
     )
     private String email = "";
@@ -111,9 +111,9 @@ public class ProveedorSpecificBeanImplementation extends TableGenericBeanImpleme
             LongName = "Codigo postal del proveedor",
             Description = "Codigo postal del proveedor",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsRequired = false,
+            RegexPattern = RegexConstants.postalCode,
+            RegexHelp = RegexConstants.postalCode_Help,
             IsForeignKeyDescriptor = false
     )
     private String codigo_postal = "";

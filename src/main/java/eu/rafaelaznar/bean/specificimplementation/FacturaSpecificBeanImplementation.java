@@ -72,8 +72,8 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
             Description = "Importe de la factura del pedido",
             Type = EnumHelper.FieldType.Decimal,
             IsRequired = true,
-            RegexPattern = "^[0-9]+([,][0-9]{2})?$",
-            RegexHelp = "Introduce un numero ",
+            RegexPattern = "^[0-9]+([.][0-9]{2})?$",
+            RegexHelp = "Introduce un numero si es con decimales separado por punto y solo dos digitos ",
             IsForeignKeyDescriptor = false,
             MaxLength = 8
     )
@@ -118,7 +118,7 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
             LongName = "observaciones del pedido",
             Description = "observaciones del pedido",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
+            IsRequired = false,
             RegexPattern = RegexConstants.capitalizedName,
             RegexHelp = RegexConstants.capitalizedName_Help,
             IsForeignKeyDescriptor = false,

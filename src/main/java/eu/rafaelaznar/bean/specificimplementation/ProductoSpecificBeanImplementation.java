@@ -123,9 +123,9 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             LongName = "Código",
             Description = "Código del producto",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
-            RegexPattern = "[^a-z0-9-]",
-            RegexHelp = "letras mayúsculas y números",
+            IsRequired = false,
+            RegexPattern = "^[A-Z]+[0-9]{4}",
+            RegexHelp = "Primera letra mayuscula seguido de 4 numeros",
             IsForeignKeyDescriptor = false,
             MaxLength = 50
     )
@@ -168,7 +168,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             LongName = "Fabricante/editorial del producto",
             Description = "Fabricante o editorial del producto",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
+            IsRequired = false,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
             IsForeignKeyDescriptor = false
@@ -182,9 +182,9 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             LongName = "Publico del producto",
             Description = "Publico al que va el producto",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsRequired = false,
+            RegexPattern = "^[+]+[0-9]{1,2}",
+            RegexHelp = "Introduce el signo + seguido de uno o dos numeros ",
             IsForeignKeyDescriptor = false,
             IsVisible = false
     )
@@ -197,7 +197,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             LongName = "Informacion adicional del producto",
             Description = "Informacion adicional del producto",
             Type = EnumHelper.FieldType.String,
-            IsRequired = true,
+            IsRequired = false,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
             IsForeignKeyDescriptor = false,

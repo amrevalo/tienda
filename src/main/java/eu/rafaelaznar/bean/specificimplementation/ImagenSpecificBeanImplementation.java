@@ -80,15 +80,7 @@ public class ImagenSpecificBeanImplementation extends TableGenericBeanImplementa
     )
     private MetaBeanHelper obj_producto = null;
     
-//    @Expose(deserialize = false)
-//    @MetaPropertyBeanInterface(
-//            ShortName = "Mangas del autor",
-//            LongName = "Mangas del autor",
-//            Description = "Mangas del autor",
-//            Type = EnumHelper.FieldType.Link,
-//            References = "producto"
-//    )
-//    private Integer link_producto = null;
+
 
     public ImagenSpecificBeanImplementation() {
     }

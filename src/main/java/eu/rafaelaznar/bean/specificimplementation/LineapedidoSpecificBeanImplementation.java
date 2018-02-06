@@ -107,7 +107,7 @@ public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImple
             Description = "Precio del producto o productos de la linea de pedido",
             Type = EnumHelper.FieldType.Decimal,
             IsRequired = true,
-            RegexPattern = "^[0-9]+([,][0-9]{2})?$",
+            RegexPattern = "^[0-9]+([.][0-9]{2})?$",
             RegexHelp = "Introduce un numero ",
             IsForeignKeyDescriptor = false,
             MaxLength = 8
@@ -130,15 +130,7 @@ public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImple
     private Integer cantidad;
     
     
-//    @Expose(deserialize = false)
-//    @MetaPropertyBeanInterface(
-//            ShortName = "Mangas del autor",
-//            LongName = "Mangas del autor",
-//            Description = "Mangas del autor",
-//            Type = EnumHelper.FieldType.Link,
-//            References = "producto"
-//    )
-//    private Integer link_producto = null;
+
 
     public LineapedidoSpecificBeanImplementation() {
     }
