@@ -79,6 +79,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             Description = "Genero del manga",
             Type = EnumHelper.FieldType.ForeignObject,
             IsRequired = true,
+            IsVisible = false,
             References = "genero",
             Width = 4
     )
@@ -127,6 +128,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             RegexPattern = "^[A-Z]+[0-9]{4}",
             RegexHelp = "Primera letra mayuscula seguido de 4 numeros",
             IsForeignKeyDescriptor = false,
+            IsVisible = false,
             MaxLength = 50
     )
     private String codigo;
@@ -171,7 +173,8 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
             IsRequired = false,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = false
+            IsForeignKeyDescriptor = false,
+            IsVisible = false
     )
     private String fabricanteoeditorial = "";
     

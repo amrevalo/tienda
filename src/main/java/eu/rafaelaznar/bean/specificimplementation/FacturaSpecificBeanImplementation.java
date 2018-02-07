@@ -122,6 +122,7 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
             RegexPattern = RegexConstants.capitalizedName,
             RegexHelp = RegexConstants.capitalizedName_Help,
             IsForeignKeyDescriptor = false,
+            IsVisible = false,
             Width = 3,
             MaxLength = 100
     )
