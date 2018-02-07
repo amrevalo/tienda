@@ -52,6 +52,7 @@ public class EnumHelper {
         Link,
         Calculated,
         Password,
+        Imagen,
         Token
     };
 

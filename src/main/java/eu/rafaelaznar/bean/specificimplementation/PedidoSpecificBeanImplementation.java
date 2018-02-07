@@ -44,7 +44,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
         TableName = "pedido",
         SingularDescription = "Pedido",
         PluralDescription = "Pedidos",
-        Icon = "fa fa-user-o",
+        Icon = "fa fa-file",
         Type = EnumHelper.SourceType.Table
 )
 public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementation {

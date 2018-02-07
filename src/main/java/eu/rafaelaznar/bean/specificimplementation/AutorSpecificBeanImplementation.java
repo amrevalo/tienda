@@ -43,7 +43,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
         TableName = "autor",
         SingularDescription = "Autor",
         PluralDescription = "Autores",
-        Icon = "fa fa-user-o",
+        Icon = "fa fa-magic",
         Type = EnumHelper.SourceType.Table
 )
 public class AutorSpecificBeanImplementation extends TableGenericBeanImplementation {

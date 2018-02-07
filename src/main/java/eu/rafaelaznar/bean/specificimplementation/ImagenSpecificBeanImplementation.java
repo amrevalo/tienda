@@ -51,9 +51,9 @@ public class ImagenSpecificBeanImplementation extends TableGenericBeanImplementa
 
     @Expose
     @MetaPropertyBeanInterface(
-            ShortName = "Imagen",
-            LongName = "Imagen del manga",
-            Description = "Imagen del tomo de manga",
+            ShortName = "Descripcion",
+            LongName = "Descripcion de la imagen",
+            Description = "Descripcion de la imagen",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
@@ -61,6 +61,19 @@ public class ImagenSpecificBeanImplementation extends TableGenericBeanImplementa
             IsForeignKeyDescriptor = true
     )
     private String descripcion = "";
+    
+    @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "Imagen",
+            LongName = "Imagen del producto",
+            Description = "Imagen del producto",
+            Type = EnumHelper.FieldType.Imagen,
+            IsRequired = true,
+            RegexPattern = RegexConstants.capitalizedSentence,
+            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsForeignKeyDescriptor = true
+    )
+    private String imagen = "";
 
     
     @Expose(serialize = false)

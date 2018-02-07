@@ -44,7 +44,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
         TableName = "lineapedido",
         SingularDescription = "Linea de pedido",
         PluralDescription = "Lineas de pedido",
-        Icon = "fas fa-camera-retro",
+        Icon = "fa fa-angle-right",
         Type = EnumHelper.SourceType.Table
 )
 public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImplementation {
