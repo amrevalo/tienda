@@ -44,7 +44,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
         TableName = "proveedor",
         SingularDescription = "Proveedor",
         PluralDescription = "Proveedores",
-        Icon = "fa fa-user-o",
+        Icon = "fa fa-truck",
         Type = EnumHelper.SourceType.Table
 )
 public class ProveedorSpecificBeanImplementation extends TableGenericBeanImplementation {

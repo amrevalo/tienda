@@ -43,7 +43,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
         TableName = "tipoproducto",
         SingularDescription = "Tipo de producto",
         PluralDescription = "Tipos de productos",
-        Icon = "fa fa-user-o",
+        Icon = "fa fa-table",
         Type = EnumHelper.SourceType.Table
 )
 public class TipoproductoSpecificBeanImplementation extends TableGenericBeanImplementation {

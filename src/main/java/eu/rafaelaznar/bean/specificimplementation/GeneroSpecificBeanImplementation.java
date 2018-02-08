@@ -43,7 +43,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
         TableName = "genero",
         SingularDescription = "Genero",
         PluralDescription = "Generos",
-        Icon = "fa fa-user-o",
+        Icon = "fa fa-transgender-alt",
         Type = EnumHelper.SourceType.Table
 )
 public class GeneroSpecificBeanImplementation extends TableGenericBeanImplementation {

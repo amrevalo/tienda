@@ -44,7 +44,7 @@ import eu.rafaelaznar.helper.constant.RegexConstants;
         TableName = "imagen",
         SingularDescription = "Imagen",
         PluralDescription = "Imagenes",
-        Icon = "fa fa-user-o",
+        Icon = "fa fa-image",
         Type = EnumHelper.SourceType.Table
 )
 public class ImagenSpecificBeanImplementation extends TableGenericBeanImplementation {
