@@ -68,7 +68,7 @@ public class ImagenSpecificBeanImplementation extends TableGenericBeanImplementa
             LongName = "Imagen del producto",
             Description = "Imagen del producto",
             Type = EnumHelper.FieldType.Imagen,
-            IsRequired = true,
+            IsRequired = false,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
             IsForeignKeyDescriptor = true

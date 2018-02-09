@@ -41,17 +41,25 @@ import eu.rafaelaznar.helper.Log4jHelper;
 import eu.rafaelaznar.factory.ServiceFactory;
 import eu.rafaelaznar.helper.EnumHelper.Environment;
 import static eu.rafaelaznar.helper.ParameterHelper.prepareCamelCaseObject;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 public class JsonController extends HttpServlet {
 
@@ -92,7 +100,47 @@ public class JsonController extends HttpServlet {
                 out.println("author: " + ConfigurationConstants.author + " (" + ConfigurationConstants.authorMail + ") " + "<br>");
                 out.println("license: " + ConfigurationConstants.licenseLink + "<br>");
                 out.println("sources: " + ConfigurationConstants.sources + "<br>");
+//////////////////////////
 
+                String name = "";
+                String strMessage = "";
+                HashMap<String, String> hash = new HashMap<>();
+
+                if (ServletFileUpload.isMultipartContent(request)) {
+                    try {
+                        List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+                        for (FileItem item : multiparts) {
+                            if (!item.isFormField()) {
+                                name = new File(item.getName()).getName();
+                                item.write(new File(".//..//webapps//images//" + name));
+
+                            } else {
+                                hash.put(item.getFieldName(), item.getString());
+
+                            }
+
+                        }
+                        strMessage = "<h1>File Uploaded Successfully</h1>";
+
+                        Iterator it = hash.entrySet().iterator();
+                        while (it.hasNext()) {
+                            Map.Entry e = (Map.Entry) it.next();
+                            strMessage += e.getKey() + " " + e.getValue() + "<br/>";
+                        }
+
+                        strMessage += "<img src=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/" + "/images/" + name + "\"  width=\"150\" /><br/>";
+                        strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
+                        request.setAttribute("message", strMessage);
+                    } catch (Exception ex) {
+                        request.setAttribute("message", "File Upload Failed: " + ex);
+                        strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
+                    }
+                } else {
+                    request.setAttribute("message", "Only serve file upload requests");
+                    strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
+                }
+
+                ////////////////
                 try {
                     oPooledConnection = ConnectionFactory.getSourceConnection(ConnectionConstants.connectionName);
                     oConnection = oPooledConnection.newConnection();
