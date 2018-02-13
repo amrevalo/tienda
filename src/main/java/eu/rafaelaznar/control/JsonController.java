@@ -75,6 +75,36 @@ public class JsonController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, Exception {
+        
+        
+        ////////////////////////////////
+        response.setContentType("text/html;charset=UTF-8");
+        String name = "";
+
+        //if (ServletFileUpload.isMultipartContent(request)) {
+            try {
+                List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+                for (FileItem item : multiparts) {
+                    if (!item.isFormField()) {
+                        name = new File(item.getName()).getName();
+                        item.write(new File("/datos/usuarios/alumnos/a022593391p/Ejercicios Programacion/juploading/src/main/webapp/imagenes/" + name));
+
+                    } else {
+                    }
+
+                }
+
+            } catch (Exception ex) {
+
+            }
+        //}
+////////////////////////////
+        
+        
+        
+        
+        
+        
         ReplyBeanHelper oReplyBean = null;
         try (PrintWriter out = response.getWriter()) {
             try {
@@ -100,51 +130,12 @@ public class JsonController extends HttpServlet {
                 out.println("author: " + ConfigurationConstants.author + " (" + ConfigurationConstants.authorMail + ") " + "<br>");
                 out.println("license: " + ConfigurationConstants.licenseLink + "<br>");
                 out.println("sources: " + ConfigurationConstants.sources + "<br>");
-//////////////////////////
-
-                String name = "";
-                String strMessage = "";
-                HashMap<String, String> hash = new HashMap<>();
-
-                if (ServletFileUpload.isMultipartContent(request)) {
-                    try {
-                        List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
-                        for (FileItem item : multiparts) {
-                            if (!item.isFormField()) {
-                                name = new File(item.getName()).getName();
-                                item.write(new File(".//..//webapps//images//" + name));
-
-                            } else {
-                                hash.put(item.getFieldName(), item.getString());
-
-                            }
-
-                        }
-                        strMessage = "<h1>File Uploaded Successfully</h1>";
-
-                        Iterator it = hash.entrySet().iterator();
-                        while (it.hasNext()) {
-                            Map.Entry e = (Map.Entry) it.next();
-                            strMessage += e.getKey() + " " + e.getValue() + "<br/>";
-                        }
-
-                        strMessage += "<img src=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/" + "/images/" + name + "\"  width=\"150\" /><br/>";
-                        strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
-                        request.setAttribute("message", strMessage);
-                    } catch (Exception ex) {
-                        request.setAttribute("message", "File Upload Failed: " + ex);
-                        strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
-                    }
-                } else {
-                    request.setAttribute("message", "Only serve file upload requests");
-                    strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
-                }
-
-                ////////////////
+////
                 try {
                     oPooledConnection = ConnectionFactory.getSourceConnection(ConnectionConstants.connectionName);
                     oConnection = oPooledConnection.newConnection();
                     out.print("<h3>Database Connection OK</h3>");
+
                 } catch (Exception ex) {
                     out.print("<h3>Database Conexión KO</h3>");
                 } finally {
@@ -180,6 +171,8 @@ public class JsonController extends HttpServlet {
                 out.print("{\"status\":" + oReplyBean.getCode() + ", \"json\":" + oReplyBean.getJson() + "}");
             }
         }
+
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
