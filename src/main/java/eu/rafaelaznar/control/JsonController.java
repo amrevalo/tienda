@@ -75,36 +75,37 @@ public class JsonController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, Exception {
-        
-        
+
+        response.setHeader("Access-Control-Allow-Origin", request.getHeader("origin"));
+//response.setHeader("Access-Control-Allow-Methods", "PATCH, POST, GET, PUT, OPTIONS, DELETE");
+        response.setHeader("Access-Control-Allow-Methods", "GET,POST");
+        response.setHeader("Access-Control-Max-Age", "86400");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, x-requested-with, Content-Type");
+
         ////////////////////////////////
         response.setContentType("text/html;charset=UTF-8");
         String name = "";
 
         //if (ServletFileUpload.isMultipartContent(request)) {
-            try {
-                List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
-                for (FileItem item : multiparts) {
-                    if (!item.isFormField()) {
-                        name = new File(item.getName()).getName();
-                        item.write(new File("/datos/usuarios/alumnos/a022593391p/Ejercicios Programacion/juploading/src/main/webapp/imagenes/" + name));
+        try {
+            List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+            for (FileItem item : multiparts) {
+                if (!item.isFormField()) {
+                    name = new File(item.getName()).getName();
+                    item.write(new File("//datos//usuarios//alumnos//a022593391p//Ejercicios Programacion//tienda//src//main//webapp//imagenes//" + name));
 
-                    } else {
-                    }
-
+                } else {
                 }
 
-            } catch (Exception ex) {
-
             }
+
+        } catch (Exception ex) {
+
+        }
         //}
 ////////////////////////////
-        
-        
-        
-        
-        
-        
+
         ReplyBeanHelper oReplyBean = null;
         try (PrintWriter out = response.getWriter()) {
             try {
@@ -172,7 +173,6 @@ public class JsonController extends HttpServlet {
             }
         }
 
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
