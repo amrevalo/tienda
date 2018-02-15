@@ -144,15 +144,7 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
     private Integer iva;
     
     
-    @Expose(deserialize = false)
-    @MetaPropertyBeanInterface(
-            ShortName = "Pedidos de la factura",
-            LongName = "Pedidos de la factura",
-            Description = "Pedidos de la factura",
-            Type = EnumHelper.FieldType.Link,
-            References = "pedido"
-    )
-    private Integer link_pedido = null;
+    
     
     
     public Double getImporte() {

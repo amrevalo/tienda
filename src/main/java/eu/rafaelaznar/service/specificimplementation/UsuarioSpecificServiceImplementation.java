@@ -36,6 +36,7 @@ import com.google.gson.Gson;
 import eu.rafaelaznar.service.genericimplementation.TableGenericServiceImplementation;
 import eu.rafaelaznar.bean.helper.MetaBeanHelper;
 import eu.rafaelaznar.bean.helper.ReplyBeanHelper;
+import eu.rafaelaznar.bean.specificimplementation.CarritoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.UsuarioSpecificBeanImplementation;
 import eu.rafaelaznar.connection.publicinterface.ConnectionInterface;
 import eu.rafaelaznar.dao.specificimplementation.UsuarioSpecificDaoImplementation;
@@ -50,6 +51,7 @@ import eu.rafaelaznar.helper.RandomHelper;
 import eu.rafaelaznar.helper.constant.ConfigurationConstants;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -115,8 +117,14 @@ public class UsuarioSpecificServiceImplementation extends TableGenericServiceImp
                 oConnection = oPooledConnection.newConnection();
                 UsuarioSpecificDaoImplementation oDao = new UsuarioSpecificDaoImplementation(oConnection, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
                 MetaBeanHelper oMetaBeanHelper = oDao.getFromLoginAndPass(oUsuarioBean);
+                //-->carro 1/2
+                ArrayList<CarritoSpecificBeanImplementation> alCarrito = new ArrayList<CarritoSpecificBeanImplementation>();
+                // --<
                 HttpSession oSession = oRequest.getSession();
                 oSession.setAttribute("user", oMetaBeanHelper);
+                //-->carro 2/2
+                oSession.setAttribute("carrito", alCarrito);
+                // --<
                 String strJson = GsonHelper.getGson().toJson(oMetaBeanHelper);
                 oReplyBean = new ReplyBeanHelper(200, strJson);
             } catch (Exception ex) {

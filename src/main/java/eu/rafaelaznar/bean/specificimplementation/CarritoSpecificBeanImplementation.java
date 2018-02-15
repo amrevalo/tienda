@@ -40,114 +40,71 @@ import eu.rafaelaznar.bean.meta.publicinterface.MetaPropertyBeanInterface;
 import eu.rafaelaznar.helper.EnumHelper;
 import eu.rafaelaznar.helper.constant.RegexConstants;
 
-@MetaObjectBeanInterface(
-        TableName = "pedido",
-        SingularDescription = "Pedido",
-        PluralDescription = "Pedidos",
-        Icon = "fa fa-file",
+@MetaObjectBeanInterface(        
+        SingularDescription = "Carrito",
+        PluralDescription = "Carrito",
+        Icon = "fa fa-shopping-cart",
         Type = EnumHelper.SourceType.Table
 )
-public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementation {
+public class CarritoSpecificBeanImplementation extends TableGenericBeanImplementation {
 
-
+    @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "Cnt.",
+            LongName = "Cantidad",
+            Description = "Cantidad de productos",
+            Type = EnumHelper.FieldType.Integer,
+            IsRequired = true,
+            RegexPattern = "[0-9]*",
+            RegexHelp = "Solo dígitos",
+            MaxLength = 5,
+            IsForeignKeyDescriptor = true,
+            IsVisible = true
+    )
+    private Integer cantidad = 0;
+    //--
     @Expose(serialize = false)
     @MetaPropertyBeanInterface(
             Type = EnumHelper.FieldType.ForeignId
     )
-    private Integer id_cliente = 0;
+    private Integer id_producto = 0;
     @Expose(deserialize = false)
     @MetaPropertyBeanInterface(
-            ShortName = "Cliente",
-            LongName = "Cliente del pedido",
-            Description = "Cliente del pedido",
+            ShortName = "Producto",
+            LongName = "Producto",
+            Description = "Producto",
             Type = EnumHelper.FieldType.ForeignObject,
             IsRequired = true,
-            References = "cliente",
+            References = "producto",
             Width = 4
     )
-    private MetaBeanHelper obj_cliente = null;
-    
-    
-    
-    
-    
-    @Expose
-    @MetaPropertyBeanInterface(
-            ShortName = "Pedido",
-            LongName = "Pedido del cliente",
-            Description = "Pedido del cliente",
-            Type = EnumHelper.FieldType.String,
-            IsRequired = true,
-            RegexPattern = RegexConstants.capitalizedSentence,
-            RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
-    )
-    private String descripcion = "";
-    
-    
-    
-    
-    
-    
-    @Expose(deserialize = false)
-    @MetaPropertyBeanInterface(
-            ShortName = "Lineas pedido por pedido",
-            LongName = "Lineas de pedido por pedido",
-            Description = "Lineas de pedido por pedido",
-            Type = EnumHelper.FieldType.Link,
-            References = "lineapedido"
-    )
-    private Integer link_lineapedido = null;
-    
-    
-    
-    @Expose(deserialize = false)
-    @MetaPropertyBeanInterface(
-            ShortName = "factura del pedido",
-            LongName = "factura del pedido",
-            Description = "factura del pedido",
-            Type = EnumHelper.FieldType.Link,
-            References = "factura"
-    )
-    private Integer link_factura = null;
+    private MetaBeanHelper obj_producto = null;
 
-    
-    public PedidoSpecificBeanImplementation() {
+    public CarritoSpecificBeanImplementation() {
     }
 
-    public PedidoSpecificBeanImplementation(Integer id) {
-        this.id = id;
+    public Integer getCantidad() {
+        return cantidad;
     }
 
-    public String getDescription() {
-        return descripcion;
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
     }
 
-    public void setDescription(String descripcion) {
-        this.descripcion = descripcion;
+    public Integer getId_producto() {
+        return id_producto;
     }
 
-    public Integer getId_cliente() {
-        return id_cliente;
+    public void setId_producto(Integer id_producto) {
+        this.id_producto = id_producto;
     }
 
-    public void setId_cliente(Integer id_cliente) {
-        this.id_cliente = id_cliente;
+    public MetaBeanHelper getObj_producto() {
+        return obj_producto;
     }
 
-    public MetaBeanHelper getObj_cliente() {
-        return obj_cliente;
+    public void setObj_producto(MetaBeanHelper obj_producto) {
+        this.obj_producto = obj_producto;
     }
 
-    public void setObj_cliente(MetaBeanHelper obj_cliente) {
-        this.obj_cliente = obj_cliente;
-    }
-
-   
-
-    
-
-    
-
-    
 }

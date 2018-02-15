@@ -35,6 +35,7 @@ package eu.rafaelaznar.factory;
 import eu.rafaelaznar.bean.helper.ReplyBeanHelper;
 import eu.rafaelaznar.helper.EncodingHelper;
 import eu.rafaelaznar.service.specificimplementation.AutorSpecificServiceImplementation;
+//import eu.rafaelaznar.service.specificimplementation.CarritoSpecificServiceImplementation;
 
 import eu.rafaelaznar.service.specificimplementation.ClienteSpecificServiceImplementation;
 //import eu.rafaelaznar.service.specificimplementation.CursoSpecificServiceImplementation;
@@ -164,7 +165,7 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oTipousuarioService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -202,15 +203,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oProductoService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                
-                case "tipoproducto":
+
+            case "tipoproducto":
                 TipoproductoSpecificServiceImplementation oTipoproductoService = new TipoproductoSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -242,14 +242,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oTipoproductoService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                case "genero":
+
+            case "genero":
                 GeneroSpecificServiceImplementation oGeneroService = new GeneroSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -281,14 +281,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oGeneroService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                case "autor":
+
+            case "autor":
                 AutorSpecificServiceImplementation oAutorService = new AutorSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -320,14 +320,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oAutorService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
-                break;        
-                
-                case "imagen":
+                break;
+
+            case "imagen":
                 ImagenSpecificServiceImplementation oImagenService = new ImagenSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -359,15 +359,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oImagenService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                
-                case "proveedor":
+
+            case "proveedor":
                 ProveedorSpecificServiceImplementation oProveedorService = new ProveedorSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -399,15 +398,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oProveedorService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                
-                case "prodxproveedor":
+
+            case "prodxproveedor":
                 ProdxproveedorSpecificServiceImplementation oProdxproveedorService = new ProdxproveedorSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -439,15 +437,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oProdxproveedorService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                
-                case "cliente":
+
+            case "cliente":
                 ClienteSpecificServiceImplementation oClienteService = new ClienteSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -479,14 +476,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oClienteService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                case "pedido":
+
+            case "pedido":
                 PedidoSpecificServiceImplementation oPedidoService = new PedidoSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -518,15 +515,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oPedidoService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                
-                case "factura":
+
+            case "factura":
                 FacturaSpecificServiceImplementation oFacturaService = new FacturaSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -558,15 +554,14 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oFacturaService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
-                
-                case "lineapedido":
+
+            case "lineapedido":
                 LineapedidoSpecificServiceImplementation oLineapedidoService = new LineapedidoSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
@@ -598,13 +593,46 @@ public class ServiceFactory {
                         break;
                     case "getpagex":
                         oReplyBean = oLineapedidoService.getPageX();
-                        break;    
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-                
+
+////            case "carrito":
+////                CarritoSpecificServiceImplementation oCarritoService = new CarritoSpecificServiceImplementation(oRequest);
+////                switch (op) {
+////                    case "getmetadata":
+////                        oReplyBean = oCarritoService.getMetaData();
+////                        break;
+////                    case "getobjectmetadata":
+////                        oReplyBean = oCarritoService.getObjectMetaData();
+////                        break;
+////                    case "getpropertiesmetadata":
+////                        oReplyBean = oCarritoService.getPropertiesMetaData();
+////                        break;
+////                    case "add":
+////                        oReplyBean = oCarritoService.add();
+////                        break;
+////                    case "remove":
+////                        oReplyBean = oCarritoService.remove();
+////                        break;
+////                    case "list":
+////                        oReplyBean = oCarritoService.list();
+////                        break;
+////                    case "buy":
+////                        oReplyBean = oCarritoService.buy();
+////                        break;
+////                    case "empty":
+////                        oReplyBean = oCarritoService.empty();
+////                        break;
+////                    default:
+////                        oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
+////                        break;
+////                }
+////                break;
+
             default:
                 oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Object not found : Please contact your administrator"));
                 break;
