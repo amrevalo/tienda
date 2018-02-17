@@ -93,8 +93,8 @@ public class JsonController extends HttpServlet {
             for (FileItem item : multiparts) {
                 if (!item.isFormField()) {
                     name = new File(item.getName()).getName();
+                    //item.write(new File(".//..//webapps//images//" + name));
                     item.write(new File(".//..//webapps//images//" + name));
-
                 } else {
                 }
 
@@ -124,7 +124,7 @@ public class JsonController extends HttpServlet {
                 response.setContentType("text/html;charset=UTF-8");
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
-                out.println("<head><title>TIENDA ALBERTO server</title><link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\"></head>");
+                out.println("<head><title>TIENDA ALBERTO server</title><link rel=\"shortcut icon\" href=\"favicont.ico\" type=\"image/x-icon\"></head>");
                 out.println("<body style=\"background: url(tiendafondo.jpg) no-repeat center center fixed; background-repeat: no-repeat;background-size: 900px;\">");
                 out.println("<h1>Welcome to TIENDA ALBERTO server</h1><h2>Servlet controller json listening at " + InetAddress.getLocalHost().getHostAddress() + ":" + request.getLocalPort() + request.getContextPath() + "</h2>");
                 out.println("version: " + ConfigurationConstants.version + " (" + ConfigurationConstants.versionDate + ")" + "<br>");

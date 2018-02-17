@@ -71,7 +71,7 @@ public class ImagenSpecificBeanImplementation extends TableGenericBeanImplementa
             IsRequired = false,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String imagen = "";
 
