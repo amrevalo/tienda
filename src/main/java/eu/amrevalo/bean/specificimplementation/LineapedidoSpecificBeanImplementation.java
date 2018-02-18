@@ -108,7 +108,7 @@ public class LineapedidoSpecificBeanImplementation extends TableGenericBeanImple
             Type = EnumHelper.FieldType.Decimal,
             IsRequired = true,
             RegexPattern = "^[0-9]+([.][0-9]{2})?$",
-            RegexHelp = "Introduce un numero ",
+            RegexHelp = "un numero con dos decimales como maximo",
             IsForeignKeyDescriptor = false,
             MaxLength = 8
     )
