@@ -34,6 +34,7 @@ package eu.amrevalo.bean.specificimplementation;
 
 import com.google.gson.annotations.Expose;
 import eu.amrevalo.bean.genericimplementation.TableGenericBeanImplementation;
+import eu.amrevalo.bean.helper.MetaBeanHelper;
 import eu.amrevalo.bean.meta.publicinterface.MetaObjectBeanInterface;
 import eu.amrevalo.bean.meta.publicinterface.MetaPropertyBeanInterface;
 import eu.amrevalo.helper.EnumHelper;
@@ -144,6 +145,23 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
     private Integer iva;
     
     
+    @Expose(serialize = false)
+    @MetaPropertyBeanInterface(
+            Type = EnumHelper.FieldType.ForeignId
+    )
+    private Integer id_pedido = 0;
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Pedido",
+            LongName = "Pedido",
+            Description = "Identificador de pedido",
+            Type = EnumHelper.FieldType.ForeignObject,
+            IsRequired = true,
+            References = "pedido",
+            Width = 4
+    )
+    private MetaBeanHelper obj_pedido = null;
+    
     
     
     
@@ -195,6 +213,22 @@ public class FacturaSpecificBeanImplementation extends TableGenericBeanImplement
 
     public void setIva(Integer iva) {
         this.iva = iva;
+    }
+
+    public Integer getId_pedido() {
+        return id_pedido;
+    }
+
+    public void setId_pedido(Integer id_pedido) {
+        this.id_pedido = id_pedido;
+    }
+
+    public MetaBeanHelper getObj_pedido() {
+        return obj_pedido;
+    }
+
+    public void setObj_pedido(MetaBeanHelper obj_pedido) {
+        this.obj_pedido = obj_pedido;
     }
     
     

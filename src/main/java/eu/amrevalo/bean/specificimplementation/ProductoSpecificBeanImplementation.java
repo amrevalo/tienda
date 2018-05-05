@@ -39,7 +39,7 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
     @MetaPropertyBeanInterface(
             ShortName = "Usuario asociado",
             LongName = "Usuario asociado",
-            Description = "Usuario del paciente",
+            Description = "Usuario del producto creado",
             Type = EnumHelper.FieldType.ForeignObject,
             IsRequired = true,
             References = "usuario",
