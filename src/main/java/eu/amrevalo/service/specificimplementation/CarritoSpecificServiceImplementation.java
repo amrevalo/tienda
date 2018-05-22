@@ -104,7 +104,7 @@ public class CarritoSpecificServiceImplementation extends TableGenericServiceImp
                     CarritoSpecificBeanImplementation oCarritoBean = new CarritoSpecificBeanImplementation();
                     oCarritoBean.setCantidad(cantidad);
                     ProductoSpecificDaoImplementation oProductoDao = new ProductoSpecificDaoImplementation(oConnection, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
-                    MetaBeanHelper oMetaBeanHelper = (MetaBeanHelper) oProductoDao.get(id, ConfigurationConstants.jsonMsgDepth);
+                    MetaBeanHelper oMetaBeanHelper = (MetaBeanHelper) oProductoDao.get(id, 1);
                     ProductoSpecificBeanImplementation oProductoBeanAdd = (ProductoSpecificBeanImplementation) oMetaBeanHelper.getBean();
                     oCarritoBean.setId_producto(oProductoBeanAdd.getId());
                     oCarritoBean.setObj_producto(oMetaBeanHelper);
