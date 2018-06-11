@@ -188,7 +188,9 @@ public class CarritoSpecificServiceImplementation extends TableGenericServiceImp
                     
                     PedidoSpecificDaoImplementation oPedidoDao = new PedidoSpecificDaoImplementation(oConnection, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
 
+                    oPedidoBean.setDescription("Pedido del cliente "+ idCliente);
                     oPedidoBean.setId(oPedidoDao.set(oPedidoBean));
+                    
 
                     Iterator<CarritoSpecificBeanImplementation> iterator = alCarrito.iterator();
                     while (iterator.hasNext()) {
